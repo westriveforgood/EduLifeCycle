@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Lifecycle App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Education Lifecycle App</h1>
+        <p class="tagline"><i>Crafting futures, one passion at a time</i></p>
+        
+        <form id="studentForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" required>
+
+            <label for="gradeLevel">Grade Level:</label>
+            <select id="gradeLevel" required>
+                <option value="" disabled selected>Select Grade</option>
+                <script>
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`<option value="${i}">${i}</option>`);
+                    }
+                </script>
+            </select>
+
+            <label for="passion1">Passion Area (1):</label>
+            <select id="passion1" required></select>
+
+            <label for="passion2">Passion Area (2):</label>
+            <select id="passion2" required></select>
+
+            <label for="passion3">Passion Area (3):</label>
+            <select id="passion3" required></select>
+
+            <button type="button" id="generatePath">Generate Path / Journey</button>
+        </form>
+
+        <div id="outputSection"></div>
+
+        <canvas id="spiderChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
